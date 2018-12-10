@@ -16,6 +16,7 @@ public class JDBCUtil {
 	        	Class.forName("com.mysql.jdbc.Driver");
 	            conn = 
 	            DriverManager.getConnection("jdbc:mysql://jimxu.top:3306/wwwxy", "wwwxy", "1234");
+	            System.out.println();
 	        } catch (Exception e) {
 	            e.printStackTrace();
 	        }
@@ -32,5 +33,9 @@ public class JDBCUtil {
 			if(conn != null){
 				conn.close();
 			}
+		}
+		public static void main(String[] args) {
+			Connection conn = new JDBCUtil().getConnection();
+			System.out.println(conn);
 		}
 }
